@@ -1,12 +1,30 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { populares } from '../data/filmes/populares';
+import { recomendados } from '../data/filmes/recomendados';
+import { estreias } from '../data/filmes/estreias';
+import FlatListFilmes from '../components/FlatListFilmes';
 import Form from '../components/Form';
 
 const Movies = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Form />
+      <ScrollView>
+        <FlatListFilmes
+          Titulo={'Os 100 filmes mais populares'}
+          Dados={populares}
+        />
+        <FlatListFilmes
+          Titulo={'Estreias antecipadas e mais'}
+          Dados={estreias}
+        />
+        <FlatListFilmes
+          Titulo={'Recomendações para você'}
+          Dados={recomendados}
+        />
+      </ScrollView>
     </SafeAreaView>
   );
 };

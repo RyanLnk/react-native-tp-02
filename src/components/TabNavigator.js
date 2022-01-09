@@ -11,9 +11,10 @@ const Tab = createBottomTabNavigator();
 const TabNavigator = () => {
   return (
     <Tab.Navigator
+      initialRouteName="Apps"
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: 'white',
+        tabBarInactiveTintColor: 'white',
         tabBarStyle: { backgroundColor: 'black' },
       }}
     >
@@ -26,7 +27,7 @@ const TabNavigator = () => {
             <Ionicons
               name={focused ? 'game-controller' : 'game-controller-outline'}
               size={24}
-              color={color}
+              color={focused ? '#008000' : color}
             />
           ),
         }}
@@ -40,7 +41,7 @@ const TabNavigator = () => {
             <Ionicons
               name={focused ? 'apps' : 'apps-outline'}
               size={24}
-              color={color}
+              color={focused ? '#4169E1' : color}
             />
           ),
         }}
@@ -54,7 +55,7 @@ const TabNavigator = () => {
             <MaterialCommunityIcons
               name={focused ? 'movie' : 'movie-outline'}
               size={24}
-              color={color}
+              color={focused ? '#CD5C5C' : color}
             />
           ),
         }}
